@@ -4,6 +4,8 @@ import Hero from "../components/Hero";
 import Marquee from "../components/Marquee";
 import About from "../components/About";
 import Stats from "../components/Stats";
+import Services from "../components/Services";
+import Featured from "../components/Featured";
 import Projects from "../components/Projects";
 import Credentials from "../components/Credentials";
 import Certifications from "../components/Certifications";
@@ -19,6 +21,8 @@ export default function Home() {
         <Marquee />
         <About />
         <Stats />
+        <Services />
+        <Featured />
         <Projects />
         <Credentials />
         <Certifications />

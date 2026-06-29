@@ -41,7 +41,7 @@ export default function Credentials() {
     >
       <div className="mx-auto max-w-[1300px] px-5 py-24 sm:px-8 md:py-36">
         <Reveal>
-          <p className="eyebrow mb-5">03 — Background</p>
+          <p className="eyebrow mb-5">04 — Background</p>
           <h2 className="mb-16 font-serif text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.02] tracking-[-0.01em]">
             Education &amp; <span className="italic text-clay">experience</span>
           </h2>

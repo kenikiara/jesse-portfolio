@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 const links = [
   { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
   { href: "#work", label: "Work" },
-  { href: "#credentials", label: "Credentials" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -50,10 +50,12 @@ export default function Nav() {
         </ul>
 
         <a
-          href="#contact"
-          className="font-mono text-xs uppercase tracking-[0.18em] text-clay transition-colors duration-200 hover:text-ink"
+          href="https://architectjesse.co.ke"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden rounded-full border border-ink px-4 py-2 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-ink transition-colors duration-200 hover:bg-ink hover:text-bone sm:inline-block"
         >
-          A1690 · M.AAK
+          Studio Site ↗
         </a>
       </nav>
     </header>

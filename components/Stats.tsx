@@ -9,9 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   { value: 12, suffix: "+", label: "Years in practice" },
-  { value: 13, suffix: "", label: "Projects delivered" },
-  { value: 2, prefix: "KES ", suffix: "B+", label: "In built value" },
-  { value: 3, suffix: "", label: "Firms · counties statewide" },
+  { value: 7, suffix: "", label: "Flagship projects" },
+  { value: 2, prefix: "KES ", suffix: "B+", label: "Value delivered" },
+  { value: 5, suffix: "", label: "Core services" },
 ];
 
 export default function Stats() {

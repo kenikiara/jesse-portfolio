@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
+import { asset } from "../lib/asset";
 
 export default function About() {
   return (
@@ -6,53 +8,54 @@ export default function About() {
       id="about"
       className="mx-auto max-w-[1300px] px-5 py-24 sm:px-8 md:py-36"
     >
-      <div className="grid gap-12 md:grid-cols-12 md:gap-8">
-        <div className="md:col-span-4">
+      <div className="grid gap-12 md:grid-cols-12 md:gap-10">
+        {/* Studio image */}
+        <div className="md:col-span-5">
           <Reveal>
-            <p className="eyebrow mb-6">01 — Career Statement</p>
-            <p className="font-mono text-sm leading-relaxed text-concrete">
-              A decade of practice across private commissions, contracting and
-              county government work.
-            </p>
+            <div className="group relative aspect-[4/5] w-full overflow-hidden bg-bone-2">
+              <Image
+                src={asset("/real/desk2.jpg")}
+                alt="Jesse's architecture studio — drafting board and drawings"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="photo object-cover"
+              />
+              <span className="absolute bottom-4 left-4 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-bone drop-shadow">
+                The studio · Ruiru
+              </span>
+            </div>
           </Reveal>
         </div>
 
-        <div className="md:col-span-8">
+        <div className="md:col-span-7 md:pl-6">
           <Reveal>
-            <h2 className="font-serif text-[clamp(1.6rem,3.4vw,2.9rem)] font-light leading-[1.18] tracking-[-0.01em] text-ink">
-              As an architect, I&apos;m dedicated to designing and delivering{" "}
-              <span className="italic text-clay">exceptional buildings</span> —
-              understanding each client&apos;s unique needs to create designs
-              that exceed expectations. My passion lies in{" "}
-              <span className="italic">sustainable architecture</span> that
-              positively impacts people&apos;s lives and the environment.
+            <p className="eyebrow mb-6">01 — The Approach</p>
+            <h2 className="font-serif text-[clamp(1.7rem,3.6vw,3rem)] font-light leading-[1.15] tracking-[-0.01em] text-ink">
+              Great design is more than aesthetics — it&apos;s{" "}
+              <span className="italic text-clay">harmony</span> between form and
+              function. Every structure tells a story, and I craft narratives
+              that blend functionality with timeless elegance.
             </h2>
           </Reveal>
 
-          <Reveal
-            as="div"
-            stagger={0.12}
-            className="mt-12 grid gap-px border-t border-line sm:grid-cols-3"
-          >
+          <Reveal as="div" stagger={0.12} className="mt-10 grid gap-px sm:grid-cols-3">
             {[
               {
-                t: "Conception to Completion",
-                d: "Involved in every phase — concept, documentation and site supervision.",
+                t: "Space, light & material",
+                d: "Designs resolved around how light moves and how materials meet.",
               },
               {
-                t: "Sustainable by Default",
-                d: "Buildings that are aesthetically resolved and environmentally responsible.",
+                t: "Client-centred",
+                d: "Concepts shaped to each client, from inception through completion.",
               },
               {
-                t: "Client-Centred",
-                d: "Designs shaped around how people actually live and work.",
+                t: "Built to endure",
+                d: "Sustainable solutions and current technology, made to last.",
               },
             ].map((item) => (
-              <div key={item.t} className="border-t border-line pt-5 sm:border-t-0 sm:pt-0">
+              <div key={item.t} className="border-t-2 border-ink pt-5">
                 <h3 className="mb-2 font-serif text-lg text-ink">{item.t}</h3>
-                <p className="text-sm leading-relaxed text-ink-soft">
-                  {item.d}
-                </p>
+                <p className="text-sm leading-relaxed text-ink-soft">{item.d}</p>
               </div>
             ))}
           </Reveal>

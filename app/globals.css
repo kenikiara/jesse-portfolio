@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Design tokens — editorial architectural minimalism
+   Design tokens — editorial architectural, bolder & vibrant
    Bone base · ink near-black · warm concrete · clay accent
    ============================================================ */
 :root {
   --bone: #f4f1ea;
   --bone-2: #ebe7dd;
-  --ink: #16140f;
-  --ink-soft: #3a362e;
-  --concrete: #8a847a;
+  --ink: #14110c;
+  --ink-soft: #38332b;
+  --concrete: #857f74;
   --concrete-2: #b8b2a6;
-  --clay: #b4541f;
-  --clay-deep: #8f3f15;
-  --line: rgba(22, 20, 15, 0.14);
+  --clay: #c4521b;
+  --clay-deep: #9a3d12;
+  --sky: #2b4a63;
+  --line: rgba(20, 17, 12, 0.14);
 }
 
 @theme inline {
@@ -25,6 +26,7 @@
   --color-concrete-2: var(--concrete-2);
   --color-clay: var(--clay);
   --color-clay-deep: var(--clay-deep);
+  --color-sky: var(--sky);
   --color-line: var(--line);
 
   --font-serif: var(--font-fraunces);
@@ -78,45 +80,32 @@ html.lenis body {
   color: var(--clay);
 }
 
-/* Selection */
 ::selection {
   background: var(--clay);
   color: var(--bone);
 }
 
-/* Duotone treatment unifies stock photos into one architectural mood */
-.duotone {
-  filter: grayscale(1) contrast(1.05) brightness(0.96);
-  transition: filter 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.group:hover .duotone {
-  filter: grayscale(0.15) contrast(1.02) brightness(1);
-  transform: scale(1.04);
-}
-
-/* Hero keeps a touch of warmth so the window lights read against the ink glass */
-.hero-media .duotone {
-  filter: grayscale(0.72) contrast(1.1) brightness(0.92);
-}
-.hero-media:hover .duotone {
-  filter: grayscale(0.1) contrast(1.05) brightness(0.98);
-}
-
-/* Reveal primitives — start hidden, JS animates in. If JS/GSAP is off
-   or reduced-motion is set, everything is shown via the fallbacks below. */
-.reveal-line > * {
+/* Full-colour photo treatment — his real work, so let it pop */
+.photo {
+  filter: saturate(1.08) contrast(1.04);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
   will-change: transform;
 }
+.group:hover .photo {
+  transform: scale(1.05);
+  filter: saturate(1.16) contrast(1.06);
+}
 
-/* Reduced motion: show everything, kill transforms */
+/* Clay block accent that sits behind framed media for pop */
+.clay-block {
+  background: var(--clay);
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
-  }
-  .duotone {
-    filter: grayscale(0.2);
   }
 }
 
@@ -127,12 +116,26 @@ html.lenis body {
   }
 }
 .marquee-track {
-  animation: marquee 38s linear infinite;
+  animation: marquee 34s linear infinite;
+}
+.marquee-track.reverse {
+  animation-direction: reverse;
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
     animation: none;
   }
+}
+
+/* Subtle film grain for richness */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Thin scrollbar */

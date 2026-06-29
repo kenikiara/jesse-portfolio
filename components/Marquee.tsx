@@ -1,12 +1,12 @@
 const words = [
-  "Sustainable Design",
+  "Design with Purpose",
+  "Architecture",
+  "Interior Design",
+  "Master Planning",
+  "Construction Management",
+  "Landscape Architecture",
   "Residential",
-  "Institutional",
-  "Civic",
-  "Documentation",
-  "Site Supervision",
-  "ArchiCAD",
-  "Concept Design",
+  "Commercial",
 ];
 
 export default function Marquee() {

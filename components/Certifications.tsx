@@ -46,7 +46,7 @@ export default function Certifications() {
   return (
     <section className="mx-auto max-w-[1300px] px-5 py-24 sm:px-8 md:py-32">
       <Reveal>
-        <p className="eyebrow mb-5">04 — Verified</p>
+        <p className="eyebrow mb-5">05 — Verified</p>
         <h2 className="mb-12 max-w-2xl font-serif text-[clamp(1.8rem,4vw,3rem)] font-light leading-[1.08] tracking-[-0.01em] text-ink">
           Licensed, insured and in good standing.
         </h2>

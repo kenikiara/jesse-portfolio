@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { SITE_URL } from "../app/data/projects";
 
 export default function Contact() {
   return (
@@ -8,7 +9,7 @@ export default function Contact() {
     >
       <div className="mx-auto max-w-[1300px] px-5 py-24 sm:px-8 md:py-32">
         <Reveal>
-          <p className="eyebrow mb-7">05 — Get in touch</p>
+          <p className="eyebrow mb-7">06 — Get in touch</p>
           <h2 className="max-w-4xl font-serif text-[clamp(2.2rem,7vw,5.5rem)] font-light leading-[0.98] tracking-[-0.02em] text-ink">
             Let&apos;s build something{" "}
             <span className="italic text-clay">lasting</span>.
@@ -25,8 +26,14 @@ export default function Contact() {
               Email
             </p>
             <a
+              href="mailto:info@architectjesse.co.ke"
+              className="block text-ink transition-colors hover:text-clay"
+            >
+              info@architectjesse.co.ke
+            </a>
+            <a
               href="mailto:jessekaranga@gmail.com"
-              className="text-ink transition-colors hover:text-clay"
+              className="block text-ink-soft transition-colors hover:text-clay"
             >
               jessekaranga@gmail.com
             </a>
@@ -52,15 +59,22 @@ export default function Contact() {
             <p className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-concrete">
               Studio
             </p>
-            <p className="text-ink">Muthaiga, Nairobi</p>
-            <p className="text-ink-soft">P.O. Box 64065-00620</p>
+            <p className="text-ink">CK Business Center</p>
+            <p className="text-ink-soft">3rd Floor, Suite 167, Ruiru</p>
           </div>
           <div>
             <p className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-concrete">
-              Registration
+              Online
             </p>
-            <p className="text-ink">Reg. No. A1690</p>
-            <p className="text-ink-soft">Member, AAK</p>
+            <a
+              href={SITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-ink transition-colors hover:text-clay"
+            >
+              architectjesse.co.ke ↗
+            </a>
+            <p className="text-ink-soft">Reg. A1690 · M.AAK</p>
           </div>
         </Reveal>
 
