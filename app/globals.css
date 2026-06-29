@@ -95,6 +95,14 @@ html.lenis body {
   transform: scale(1.04);
 }
 
+/* Hero keeps a touch of warmth so the window lights read against the ink glass */
+.hero-media .duotone {
+  filter: grayscale(0.72) contrast(1.1) brightness(0.92);
+}
+.hero-media:hover .duotone {
+  filter: grayscale(0.1) contrast(1.05) brightness(0.98);
+}
+
 /* Reveal primitives — start hidden, JS animates in. If JS/GSAP is off
    or reduced-motion is set, everything is shown via the fallbacks below. */
 .reveal-line > * {
