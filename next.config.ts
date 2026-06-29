@@ -7,12 +7,18 @@ import type { NextConfig } from "next";
 const repo = "jesse-portfolio";
 const isGhPages = process.env.GITHUB_PAGES === "true";
 
+const basePath = isGhPages ? `/${repo}` : "";
+
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: isGhPages ? `/${repo}` : "",
+  basePath,
   assetPrefix: isGhPages ? `/${repo}/` : "",
   images: { unoptimized: true },
   trailingSlash: true,
+  // Exposed to the client so <Image> src strings (in /public) can be prefixed
+  // with the basePath — next/image does not do this automatically for
+  // unoptimized static exports.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
 };
 
 export default nextConfig;

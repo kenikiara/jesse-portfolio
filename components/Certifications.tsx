@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Reveal from "./Reveal";
+import { asset } from "../lib/asset";
 
 const certs = [
   {
@@ -64,7 +65,7 @@ export default function Certifications() {
           >
             <div className="relative mb-3 aspect-[3/4] w-full overflow-hidden border border-line bg-white">
               <Image
-                src={c.src}
+                src={asset(c.src)}
                 alt={`${c.title} — ${c.issuer}`}
                 fill
                 sizes="(max-width: 768px) 50vw, 22vw"
@@ -103,7 +104,7 @@ export default function Certifications() {
             className="relative max-h-[85vh] w-full max-w-2xl"
           >
             <Image
-              src={certs[active].src}
+              src={asset(certs[active].src)}
               alt={`${certs[active].title} — ${certs[active].issuer}`}
               width={900}
               height={1200}

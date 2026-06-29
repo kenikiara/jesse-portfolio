@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { projects, categories, type Category } from "../app/data/projects";
+import { asset } from "../lib/asset";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,7 +97,7 @@ export default function Projects() {
           <article key={p.id} className="project-card group">
             <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden bg-bone-2">
               <Image
-                src={`/projects/${p.image}.jpg`}
+                src={asset(`/projects/${p.image}.jpg`)}
                 alt={`${p.title} — ${p.location}`}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

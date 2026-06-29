@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { asset } from "../lib/asset";
 
 const titleLines = ["Architecture", "for people", "& planet"];
 
@@ -116,7 +117,7 @@ export default function Hero() {
           <div className="hero-media group relative aspect-[4/5] w-full overflow-hidden bg-bone-2">
             <div className="hero-media-inner absolute inset-0 scale-110">
               <Image
-                src="/projects/hero.jpg"
+                src={asset("/projects/hero.jpg")}
                 alt="Architectural detail — concrete and light"
                 fill
                 priority
