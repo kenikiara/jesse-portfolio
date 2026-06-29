@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jesse Karanga Kimani — Architect Portfolio
 
-## Getting Started
+A modern, animated single-page portfolio for **Arch. Jesse Karanga Kimani**
+(M.AAK, Reg. No. A1690), built with **Next.js 16 (static export)**, **Tailwind CSS v4**,
+**GSAP + ScrollTrigger** and **Lenis** smooth scroll.
 
-First, run the development server:
+Aesthetic: editorial architectural minimalism — bone / ink / clay palette,
+Fraunces display serif + Inter + Space Mono.
+
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build (static export)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # outputs a static site to ./out
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploying
 
-## Learn More
+### GitHub Pages (automatic)
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds with
+`GITHUB_PAGES=true` (so asset paths are prefixed with `/jesse-portfolio`) and
+publishes `./out` to GitHub Pages.
 
-To learn more about Next.js, take a look at the following resources:
+> In the repo: **Settings → Pages → Build and deployment → Source = GitHub Actions.**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### cPanel (later)
+cPanel serves from a domain root, so build **without** the GitHub Pages prefix:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build            # GITHUB_PAGES is unset -> empty basePath
+```
 
-## Deploy on Vercel
+Then upload everything inside `./out` to your cPanel `public_html` (or a
+subfolder) via File Manager / FTP. No Node runtime is required on the server —
+it is plain static HTML, CSS, JS and images.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Updating content
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Projects** — edit `app/data/projects.ts`.
+- **Project photos** — drop real images into `public/projects/` and point each
+  project's `image` field at the new filename (currently architecture stock
+  photos used as placeholders).
+- **Certificates** — `public/certs/` (real scans from the profile).
+- **Contact / credentials** — `components/Contact.tsx`, `components/Credentials.tsx`.
